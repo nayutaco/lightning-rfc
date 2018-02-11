@@ -261,7 +261,7 @@ The creating node:
   remaining packet after `signature` (using the key given by `node_id`).
   - MAY set `alias` AND `rgb_color` to customize its appearance in maps and
   graphs.
-    - Note: the first byte of `rgb` is the red value, the second byte is the
+    - Note: the first byte of `rgb_color` is the red value, the second byte is the
     green value, and the last byte is the blue value.
   - MUST set `alias` to a valid UTF-8 string, with any `alias` trailing-bytes
   equal to zero.
@@ -328,13 +328,13 @@ padding within `addresses` if they require certain alignment.
 ### Security Considerations for Node Aliases
 
 Node aliases are user-defined and provide a potential avenue for injection
-attacks, both in the process of rendering and persistence. 
+attacks, both in the process of rendering and persistence.
 
 Node aliases should always be sanitized before being displayed in
 HTML/Javascript contexts, or any other dynamically interpreted rendering
 frameworks.  Similarly, consider using prepared statements, input validation,
 and/or escaping to protect against injection vulnerabilities against persistence
-engines that support SQL or other dynamically interpreted querying languages. 
+engines that support SQL or other dynamically interpreted querying languages.
 
 * [Stored and Reflected XSS Prevention](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)
 * [DOM-based XSS Prevention](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet)
